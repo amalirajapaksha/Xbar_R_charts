@@ -80,7 +80,7 @@ ui <- fluidPage(
   color: #000000 !important;  /* default text color */
 }
 "))
-),
+  ),
   
   sidebarLayout(
     sidebarPanel(
@@ -464,24 +464,6 @@ server <- function(input, output, session) {
     
     ooc
   })
-  
-  # ---- Show warning if any out-of-control points exist ----
-  output$phase1_warnings <- renderUI({
-    ooc <- ooc_subgroups()
-    
-    if (any(ooc)) {
-      div(
-        style = "color: red; font-weight: bold; font-size: 18px; margin-bottom: 10px;",
-        HTML("⚠️ Some Phase I points are out-of-control! Before simply deleting them, try to identify whether there are <b>non-random patterns</b> and look for <b>assignable causes</b>. 
-           If you determine a point is due to special cause, you can delete it in the 'Phase I Data' tab.")
-      )
-    } else {
-      NULL
-    }
-  })
-  
-  
-  
   
   # ---- Charts ----
   output$r_chart <- renderPlot({
