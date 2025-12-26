@@ -79,14 +79,14 @@ ui <- fluidPage(
         tabPanel("Phase I Charts",
                  wellPanel(
                    h4("R Chart"),
-                   plotOutput("r_chart", height = "350px"),
+                   plotOutput("r_chart", height = "400px"),
                    textOutput("rbar_text"),
                    textOutput("ucl_text"),
                    textOutput("lcl_text")
                  ),
                  wellPanel(
                    h4("X̄ Chart"),
-                   plotOutput("xbar_chart", height = "350px"),
+                   plotOutput("xbar_chart", height = "400px"),
                    textOutput("xbar_text"),
                    textOutput("xbar_ucl_text"),
                    textOutput("xbar_lcl_text")
@@ -257,26 +257,40 @@ server <- function(input, output, session) {
   output$r_chart <- renderPlot({
     s <- r_stats()
     ggplot(s$R_df, aes(Subgroup, R)) +
-      geom_line() +
+      geom_line(color = "#1f4e79") +
       geom_point(aes(color = OutOfControl), size = 3) +
       geom_hline(yintercept = c(s$Rbar, s$UCL, s$LCL),
                  linetype = c("dashed","solid","solid"),
                  color = c("black","red","red")) +
       scale_color_manual(values = c("black","red")) +
-      theme_minimal()
+      labs(
+        title = "Phase I R Chart",
+        x = "Subgroup",
+        y = "Sample Range (R)",
+        color = ""
+      ) +
+      theme_minimal(base_size = 13) +
+      theme(plot.title = element_text(face = "bold", hjust = 0.5))
   })
   
   output$xbar_chart <- renderPlot({
     s <- xbar_stats()
     req(s)
     ggplot(s$Xbar_df, aes(Subgroup, Xbar)) +
-      geom_line() +
+      geom_line(color = "#1f794e") +
       geom_point(aes(color = OutOfControl), size = 3) +
       geom_hline(yintercept = c(s$Xbar_bar, s$Xbar_UCL, s$Xbar_LCL),
                  linetype = c("dashed","solid","solid"),
                  color = c("black","red","red")) +
       scale_color_manual(values = c("black","red")) +
-      theme_minimal()
+      labs(
+        title = "Phase I X̄ Chart",
+        x = "Subgroup",
+        y = "Sample Mean (X̄)",
+        color = ""
+      ) +
+      theme_minimal(base_size = 13) +
+      theme(plot.title = element_text(face = "bold", hjust = 0.5))
   })
   
   # ---- Text summaries ----
