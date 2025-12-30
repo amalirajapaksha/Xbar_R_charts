@@ -38,7 +38,7 @@ This Shiny app allows users to explore **X̄ (mean) and R (range) control charts
 
 ## Reference
 
-Montgomery, D. C. (Year). *Introduction to Statistical Quality Control* (6th Edition).
+Montgomery, D. C. (2009). *Introduction to Statistical Quality Control* (6th Edition).
 
 ---
 
