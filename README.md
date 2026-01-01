@@ -1,4 +1,4 @@
-# X̄ & R Charts
+# X̄ & R Charts Shiny App
 
 This Shiny app allows users to explore **X̄ (mean) and R (range) control charts** for quality control. It is developed **for learning purposes** and demonstrates Phase I and Phase II charting.
 
@@ -38,7 +38,7 @@ This Shiny app allows users to explore **X̄ (mean) and R (range) control charts
 
 ## Reference
 
-Montgomery, D. C. (Year). *Introduction to Statistical Quality Control* (6th Edition).
+Montgomery, D. C. (2009). *Introduction to Statistical Quality Control* (6th Edition).
 
 ---
 
