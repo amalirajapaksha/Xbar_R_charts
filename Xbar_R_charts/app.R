@@ -648,9 +648,9 @@ server <- function(input, output, session) {
       geom_hline(yintercept = s$Rbar, linetype = "longdash", linewidth = 0.9, color = "black") +
       geom_hline(yintercept = s$UCL, linetype = "solid", linewidth = 1, color = "red") +
       geom_hline(yintercept = s$LCL, linetype = "solid", linewidth = 1, color = "red") +
-      annotate("label", x = 0.7, y = s$Rbar, label = "CL", fill = "white", color = "black", size = 3.5, label.size = 0.2) +
-      annotate("label", x = 0.7, y = s$UCL, label = "UCL", fill = "white", color = "#C62828", size = 3.5, label.size = 0.2) +  
-      annotate("label", x = 0.7, y = s$LCL, label = "LCL", fill = "white", color = "#C62828", size = 3.5, label.size = 0.2) +    
+      annotate("label", x = 0, y = s$Rbar, label = "CL", fill = "white", color = "black", size = 4.5) +
+      annotate("label", x = 0, y = s$UCL, label = "UCL", fill = "white", color = "#C62828", size = 4.5) +  
+      annotate("label", x = 0, y = s$LCL, label = "LCL", fill = "white", color = "#C62828", size = 4.5) +    
       {if (!is.null(p2)) geom_vline(xintercept = nrow(p1) + 0.5, linetype = "dashed", color = "gray40")} +
       labs(
         title = "R Chart (Phase I Limits, Phase II Monitoring)",
@@ -699,9 +699,9 @@ server <- function(input, output, session) {
         geom_hline(yintercept = s$Xbar_bar, linetype = "longdash", linewidth = 0.9, color = "black") +
         geom_hline(yintercept = s$Xbar_UCL, linetype = "solid", linewidth = 1, color = "red") +
         geom_hline(yintercept = s$Xbar_LCL, linetype = "solid", linewidth = 1, color = "red") +
-        annotate("label", x = 0.7, y = s$Xbar_bar, label = "CL", fill = "white", color = "black", size = 3.5, label.size = 0.2) +
-        annotate("label", x = 0.7, y = s$Xbar_UCL, label = "UCL", fill = "white", color = "#C62828", size = 3.5, label.size = 0.2) +  
-        annotate("label", x = 0.7, y = s$Xbar_LCL, label = "LCL", fill = "white", color = "#C62828", size = 3.5, label.size = 0.2) + 
+        annotate("label", x = 0, y = s$Xbar_bar, label = "CL", fill = "white", color = "black", size = 4.5) +
+        annotate("label", x = 0, y = s$Xbar_UCL, label = "UCL", fill = "white", color = "#C62828", size = 4.5) +  
+        annotate("label", x = 0, y = s$Xbar_LCL, label = "LCL", fill = "white", color = "#C62828", size = 4.5) + 
       {if (!is.null(p2)) geom_vline(xintercept = nrow(p1) + 0.5, linetype = "dashed", color = "gray40")} +
         labs(
           title = expression(bold(bar(X)~"Chart (Phase I Limits, Phase II Monitoring)")),
@@ -709,7 +709,8 @@ server <- function(input, output, session) {
           y = expression(bold("Sample Mean ("*bar(X)*")"))
         ) +
       theme_minimal(base_size = 13) +
-      theme (axis.text = element_text(color = "gray20"))
+      theme (axis.text = element_text(color = "gray20"),
+             plot.title = element_text(face = "bold", hjust = 0.5))
     
   })
   
