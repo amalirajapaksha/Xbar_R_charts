@@ -5,7 +5,7 @@ account: amalirajapaksha
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 16355227
-bundleId: 11389568
+bundleId: 11422628
 url: https://amalirajapaksha.shinyapps.io/Xbar_R_charts/
 version: 1
 asMultiple: FALSE
