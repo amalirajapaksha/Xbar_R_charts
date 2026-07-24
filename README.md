@@ -1,4 +1,4 @@
-# X̄ & R Charts Shiny App
+# [X̄ & R Charts Shiny App](https://amalirajapaksha.shinyapps.io/Xbar_R_charts/)
 
 This Shiny app allows users to explore **X̄ (mean) and R (range) control charts** for quality control. It is developed **for learning purposes** and demonstrates Phase I and Phase II charting.
 
